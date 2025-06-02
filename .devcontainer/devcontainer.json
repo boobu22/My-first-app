@@ -1,17 +1,22 @@
 {
-  "name": "Ubuntu 22.04 with sudo user",
+  "name": "DevOps CI/CD Base",
   "image": "ubuntu:22.04",
-  "postCreateCommand": "apt-get update && apt-get install -y sudo curl git vim && useradd -m -s /bin/bash devuser && echo 'devuser ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && chown -R devuser:devuser /workspace && rm -rf /var/lib/apt/lists/*",
-  "remoteUser": "devuser",
-  "workspaceFolder": "/workspace",
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-  ],
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
-  "extensions": [
-    "ms-azuretools.vscode-docker",
-    "redhat.vscode-yaml"
-  ]
+  "features": {},
+  "postCreateCommand": "sudo apt update && sudo apt install -y curl wget unzip git vim",
+  "remoteUser": "vscode",
+  "forwardPorts": [8080, 8081],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.java"
+      ]
+    }
+  }
 }
