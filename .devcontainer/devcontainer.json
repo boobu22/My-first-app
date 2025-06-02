@@ -1,0 +1,9 @@
+{
+  "name": "Plain Ubuntu DevOps Lab",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu:22.04",
+  "forwardPorts": [8080, 8081, 8082],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "postCreateCommand": "echo 'Welcome! Start installing your tools manually.'"
+}
