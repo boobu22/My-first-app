@@ -1,9 +1,10 @@
 {
-  "name": "Plain Ubuntu DevOps Lab",
+  "name": "Ubuntu 22.04 DevOps Env",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu:22.04",
-  "forwardPorts": [8080, 8081, 8082],
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "postCreateCommand": "echo 'Welcome! Start installing your tools manually.'"
+  "forwardPorts": [8080, 8081, 8082],
+  "postCreateCommand": "echo 'Ubuntu 22.04 ready! Install your tools manually.'"
 }
