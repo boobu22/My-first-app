@@ -1,10 +1,31 @@
 {
-  "name": "Ubuntu 22.04 DevOps Env",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu:22.04",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  "name": "DevOps CI/CD Environment",
+  "image": "ubuntu:22.04",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json",
+        "redhat.java",
+        "vscjava.vscode-maven"
+      ]
+    }
   },
-  "forwardPorts": [8080, 8081, 8082],
-  "postCreateCommand": "echo 'Ubuntu 22.04 ready! Install your tools manually.'"
+  "forwardPorts": [8080, 8081, 9000],
+  "portsAttributes": {
+    "8080": {
+      "label": "Jenkins/Application",
+      "onAutoForward": "notify"
+    },
+    "8081": {
+      "label": "Nexus Repository",
+      "onAutoForward": "notify"
+    },
+    "9000": {
+      "label": "Additional Services",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "echo 'Clean Ubuntu 22.04 Codespace ready for manual DevOps setup!'",
+  "remoteUser": "root"
 }
