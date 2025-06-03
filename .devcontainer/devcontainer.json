@@ -1,16 +1,11 @@
 {
-  "name": "Ubuntu 22.04 DevContainer with NestJS",
-  "image": "ubuntu:22.04",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "nestjs.nestjs-snippets"
-      ]
-    }
+  "name": "Ubuntu 22.04 Minimal",
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "/bin/bash /workspaces/.devcontainer/setup.sh",
-  "remoteUser": "vscode",
-  "features": {}
+  "settings": {},
+  "extensions": [],
+  "forwardPorts": [],
+  "postCreateCommand": "",
+  "remoteUser": "root"
 }
