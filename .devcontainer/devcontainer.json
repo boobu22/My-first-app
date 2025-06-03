@@ -1,5 +1,5 @@
 {
-  "name": "Ubuntu 22.04 Minimal Clean",
+  "name": "Ubuntu 22.04 with sudo",
   "build": {
     "dockerfile": "Dockerfile"
   },
