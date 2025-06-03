@@ -1,6 +1,11 @@
 {
-  "image": "ubuntu:22.04",
-  "features": {},
-  "postCreateCommand": "apt-get update && apt-get install -y openjdk-11-jdk curl vim && apt-get clean",
-  "remoteUser": "ubuntu"
+  "name": "Ubuntu 22.04 Minimal with sudo",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "ubuntu",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "java -version"
 }
