@@ -2,5 +2,5 @@
   "image": "ubuntu:22.04",
   "features": {},
   "postCreateCommand": "apt-get update && apt-get install -y openjdk-11-jdk curl vim && apt-get clean",
-  "remoteUser": "root"
+  "remoteUser": "ubuntu"
 }
