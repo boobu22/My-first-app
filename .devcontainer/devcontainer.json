@@ -1,11 +1,7 @@
 {
-  "name": "Ubuntu 22.04 Minimal",
+  "name": "Ubuntu 22.04 with devuser",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "settings": {},
-  "extensions": [],
-  "forwardPorts": [],
-  "postCreateCommand": "",
-  "remoteUser": "root"
+  "remoteUser": "devuser"
 }
