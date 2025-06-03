@@ -1,10 +1,16 @@
 {
-  "name": "Ubuntu 22.04 with sudo",
-  "build": {
-    "dockerfile": "Dockerfile"
+  "name": "Ubuntu 22.04 DevContainer with NestJS",
+  "image": "ubuntu:22.04",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "nestjs.nestjs-snippets"
+      ]
+    }
   },
-  "remoteUser": "ubuntu",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  }
+  "postCreateCommand": "/bin/bash /workspaces/.devcontainer/setup.sh",
+  "remoteUser": "vscode",
+  "features": {}
 }
